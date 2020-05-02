@@ -1,0 +1,175 @@
+@font-face { /* Set custom font oswald */
+  font-family: oswald;
+  src: url(oswald.ttf);
+}
+
+@font-face { /* Set custom font alfa */
+  font-family: alfa;
+  src: url(alfaslabone.ttf);
+}
+
+::-webkit-scrollbar {
+  width: 20px; /* Remove scrollbar space */
+  background: transparent; /* Optional: just make scrollbar invisible */
+}
+/* Optional: show position indicator in red */
+::-webkit-scrollbar-thumb {
+  background: red;
+}
+
+html { /* To smoothly scroll to different sections */
+  scroll-behavior: smooth;
+}
+
+body { /* Styling for entire body */
+  margin: 0; /* No margin for body */
+  font-family: oswald; /* Use oswald font in the body */
+  background-color:#000000; /* Set background color of body to be black */
+  color: white; /* Sets color of text in body to white */
+}
+
+h1 {
+  font-size: 70px; /* h1 font size set */
+}
+
+h2 {
+  font-size: 40px; /* h2 font size set */
+}
+
+h3 {
+  font-size: 25px; /* h3 font size set */
+}
+
+c{ /* Used this tag for highlighting text */
+  color: red;
+}
+
+section { /* Common styling for all the sections of the website */
+  width: 80%;
+  padding: 5% 7%;
+  display: table;
+  margin: 0;
+  max-width: none;
+  height: 100vh;
+}
+
+button
+{
+  -webkit-appearance: none;
+  background-color: red;
+  height: 60px;
+  font-size: 35px;
+  font-family: oswald;
+  border-color: red;
+  color: white;
+}
+
+contact { /* The box containing email and phone number */
+  font-size: 32px;
+  background-color: red;
+  display: inline-block;
+  padding-top: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-bottom: 10px;
+}
+
+.logo { /* UR Logo */
+  width: 60%;
+  position: fixed;
+  top: 0;
+  float: left;
+  padding: 30px 30px;
+  font-family: alfa;
+  color: red;
+  text-align: left;
+  font-size: 37px;
+}
+
+.topnav { /* Navigation bar styling for non-mobile */
+  overflow: hidden; /* This is used to not display the part of content that spills or exceeds out from the navbar */
+  position: fixed; /* Set position of navbar */
+  top: 0; /* Sets position of navbar to the very top */
+  right: 0; /* Sets position of navbar to the very right */
+}
+
+.topnav a { /* Navbar items styling */
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 34px 50px;
+  text-decoration: none;
+  font-size: 27px;
+}
+
+.topnav a.active { /* Active navbar items */
+  background-color: #4CAF50; /* Sets background color */
+  color: white; /* Sets text color to be white of active navbar items */
+}
+
+.topnav .icon { /* Three bars icon(displayed when on mobile devices) */
+  display: none; /* It disables the three bars icon by default if screen size is greater than 920pixels */
+}
+
+.home { /* Home section needed to be different then rest of the sections */
+  line-height: 1.2;
+  margin: auto;
+  width: 100%;
+  height: 100%;
+  padding-top: 14%;
+}
+
+.contacticons a{ /* Contact/connect icons properties */
+  color: inherit;
+  text-decoration: none;
+  padding: 20px 4%;
+  float: left;
+  display: block;
+  text-align: center;
+}
+
+.footer { /* Gray footer part styling */
+  text-align: center;
+  background-color: #27292b;
+  padding-bottom: 10px;
+  padding-top: 10px;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+@media screen and (max-width: 920px) { /* This is for responsive layout. If width is less than 920pixels, the following scope will be activated */
+  .topnav a {
+    display: none; /* This stops the non mobile navigation bar items from being displayed */
+  }  
+  .topnav a.icon {
+    display: block; /* This enables the three lines/bars icon */
+  }
+}
+
+@media screen and (max-width: 920px) { /* This is for responsive layout. If width is less than 920pixels, the following scope will be activated */
+  .topnav.responsive { /* Responsive navbar styling */
+    position: -webkit-sticky; // Required for Safari
+    position: sticky; /* To make the navbar stick to the top always, and not move with the page when scrolled */
+    top: 0; /* Sets position of navbar to the very top */
+    left: 0; /* Sets navbar's position to the very left */
+    background-color: #000000; /* Sets navbar's background color as black */
+    opacity: 80%; /* Makes the navbar a little transparent */
+  }
+  .topnav.responsive .icon { /* Navbar three bars icon styling */
+    position: absolute; /* Sets the three bars icon position */
+    right: 0; /* Sets position of three bars to the very right */
+    top: 0; /* Sets position of three bars to the very top */
+  }
+  .topnav.responsive a { /* Responsive navbar items styling */
+    float: none;
+    display: block; /* Enables the responsive navbar items */
+    text-align: left; /* Aligns the navbar item's text to left */
+  }
+}
+}
+

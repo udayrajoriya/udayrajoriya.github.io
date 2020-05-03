@@ -29,15 +29,15 @@ body { /* Styling for entire body */
 }
 
 h1 {
-  font-size: 70px; /* h1 font size set */
+  font-size: 68px; /* h1 font size set */
 }
 
 h2 {
-  font-size: 40px; /* h2 font size set */
+  font-size: 38px; /* h2 font size set */
 }
 
 h3 {
-  font-size: 25px; /* h3 font size set */
+  font-size: 23px; /* h3 font size set */
 }
 
 c{ /* Used this tag for highlighting text */
@@ -58,14 +58,14 @@ button
   -webkit-appearance: none;
   background-color: red;
   height: 60px;
-  font-size: 35px;
+  font-size: 33px;
   font-family: oswald;
   border-color: red;
   color: white;
 }
 
 contact { /* The box containing email and phone number */
-  font-size: 32px;
+  font-size: 30px;
   background-color: red;
   display: inline-block;
   padding-top: 10px;
@@ -83,7 +83,7 @@ contact { /* The box containing email and phone number */
   font-family: alfa;
   color: red;
   text-align: left;
-  font-size: 37px;
+  font-size: 35px;
 }
 
 .topnav { /* Navigation bar styling for non-mobile */
@@ -100,7 +100,7 @@ contact { /* The box containing email and phone number */
   text-align: center;
   padding: 34px 50px;
   text-decoration: none;
-  font-size: 27px;
+  font-size: 25px;
 }
 
 .topnav a.active { /* Active navbar items */

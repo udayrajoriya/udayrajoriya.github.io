@@ -45,7 +45,7 @@ c{ /* Used this tag for highlighting text */
 }
 
 section { /* Common styling for all the sections of the website */
-  width: 90%;
+  width: 80%;
   padding: 5% 7%;
   display: table;
   margin: 0;
@@ -53,15 +53,12 @@ section { /* Common styling for all the sections of the website */
   height: 100vh;
 }
 
-button
-{
-  -webkit-appearance: none;
-  background-color: red;
-  height: 60px;
-  font-size: 33px;
-  font-family: oswald;
-  border-color: red;
-  color: white;
+.home { /* Home section needed to be different then rest of the sections */
+  line-height: 1.2;
+  margin: auto;
+  width: 100%;
+  height: 100%;
+  padding-top: 14%;
 }
 
 contact { /* The box containing email and phone number */
@@ -110,14 +107,6 @@ contact { /* The box containing email and phone number */
 
 .topnav .icon { /* Three bars icon(displayed when on mobile devices) */
   display: none; /* It disables the three bars icon by default if screen size is greater than 920pixels */
-}
-
-.home { /* Home section needed to be different then rest of the sections */
-  line-height: 1.2;
-  margin: auto;
-  width: 100%;
-  height: 100%;
-  padding-top: 22%;
 }
 
 .contacticons a{ /* Contact/connect icons properties */

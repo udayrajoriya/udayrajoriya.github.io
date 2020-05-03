@@ -46,7 +46,7 @@ c{ /* Used this tag for highlighting text */
 
 section { /* Common styling for all the sections of the website */
   width: 90%;
-  padding: 5% 7%;
+  padding: 5% 5%;
   display: table;
   margin: 0;
   max-width: none;

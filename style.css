@@ -50,7 +50,7 @@ section { /* Common styling for all the sections of the website */
   display: table;
   margin: 0;
   max-width: none;
-  height: 100vh;
+  height: 67.7vh;
 }
 
 .home { /* Home section needed to be different then rest of the sections */
@@ -69,6 +69,17 @@ contact { /* The box containing email and phone number */
   padding-left: 15px;
   padding-right: 15px;
   padding-bottom: 10px;
+}
+
+.invalid { /* 404 Section */
+  width: 80%;
+  padding: 15% 7%;
+  display: table;
+  margin: 0;
+  max-width: none;
+  height: 10vh;
+  line-height: 1.2;
+  margin: auto;
 }
 
 .logo { /* UR Logo */
@@ -123,6 +134,7 @@ contact { /* The box containing email and phone number */
   background-color: #27292b;
   padding-bottom: 10px;
   padding-top: 10px;
+  bottom: 0;
 }
 
 .sticky {

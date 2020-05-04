@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Uday Rajoriya</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://kit.fontawesome.com/94b153f56e.js" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="style.css">
+
+
+</head>
+
+<body>
+
+
+<div class = "logo">U|R</div>
+
+
+<div class="topnav" id="myTopnav" >
+
+
+
+  <a href="https://udayrajoriya.com/#home">Home</a>
+  <a href="https://udayrajoriya.com/#projects">Projects</a>
+  <a href="https://udayrajoriya.com/#about">About</a>
+  <a href="https://udayrajoriya.com/#contact">Contact</a>
+  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <i class="fas fa-bars"></i>
+  </a>
+</div>
+
+<section id=projects style="height: 1vh; padding-left: 7%; padding-top: 5%; padding-bottom: 0.1%;">
+<h1 style="padding-bottom: 0.1%;">Projects</h1>
+</section>
+  <div class="project-title">
+
+    <h2>ENCRYPTER</h2>
+    <h3>C#</h3>
+  </div>
+
+<div class="project">
+
+
+
+  <div class = "description">
+
+    <p>How is it going bros?<br>My name is pewdiepie</p>
+
+  </div>
+
+  <div class = "screens">
+
+    <div class="slideshow-container">
+
+      <div class="mySlides">
+        
+        <img src="projects/encrypter_01.png">
+
+      </div>
+
+      <div class="mySlides">
+
+        <img src="projects/encrypter_02.png">
+
+      </div>
+
+      <div class="mySlides">
+
+        <img src="projects/encrypter_03.png">
+
+      </div>
+
+      <div class="mySlides">
+
+        <img src="projects/encrypter_04.png">
+
+      </div>
+
+      <a class="prev" onclick="plusSlides(-1)">❮</a>
+      <a class="next" onclick="plusSlides(1)">❯</a>
+
+    </div>
+
+    <div class="dot-container">
+      
+      <span class="dot" onclick="currentSlide(1)"></span>
+      <span class="dot" onclick="currentSlide(2)"></span>
+      <span class="dot" onclick="currentSlide(3)"></span>
+      <span class="dot" onclick="currentSlide(4)"></span>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+<div class = "footer">
+  <h4>© Copyright 2020. All rights reserved.<br>
+  Website Designed and Developed by Uday Rajoriya</h4>
+</div>
+
+<script>
+function myFunction()
+{
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav")
+  {
+    x.className += " responsive";
+  } else
+  {
+    x.className = "topnav";
+  }
+}
+
+document.addEventListener("contextmenu", function(e){
+    e.preventDefault();
+}, false);
+
+var slideIndex = 1;
+  showSlides(slideIndex);
+
+  function plusSlides(n) {
+    showSlides(slideIndex += n);
+  }
+
+  function currentSlide(n) {
+    showSlides(slideIndex = n);
+  }
+
+  function showSlides(n) {
+    var i;
+    var slides = document.getElementsByClassName("mySlides");
+    var dots = document.getElementsByClassName("dot");
+    if (n > slides.length) {slideIndex = 1}    
+    if (n < 1) {slideIndex = slides.length}
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";  
+    }
+    for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex-1].style.display = "block";  
+    dots[slideIndex-1].className += " active";
+  }
+
+</script>
+
+
+</body>
+</html>

@@ -12,21 +12,7 @@
 <body>
 
 
-<div class = "logo">U|R</div>
 
-
-<div class="topnav" id="myTopnav" >
-
-
-
-  <a href="#home">Home</a>
-  <a href="#projects">Projects</a>
-  <a href="#about">About</a>
-  <a href="#contact">Contact</a>
-  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-    <i class="fas fa-bars"></i>
-  </a>
-</div>
 
 
 
@@ -39,10 +25,39 @@
 
 
 <section id=projects>
-<div class="projects" style="padding-left: 17px">
-  <h1>Projects</h1>
-  <h2>Will be added soon!</h2>
-</div>
+  <div class="projects">
+    <h1>Projects</h1>
+
+    <div class="slideshow-container">  
+      
+      <!-- Project START: ENCRYPTER -->
+      <div class="mySlides">
+        <div class="project-title">
+          <h2>ENCRYPTER</h2>
+          <h3>C#</h3>
+        </div>
+        <div class="project">
+          <div class = "description">
+            <h3>This project was something I had in my mind for quite sometime, but this project kept getting pushed. But, finally during the 2020 quarantine I decided and told myself, that I should stop pushing it further.<br>ENCRYPTER, takes any text from you and a password, and via using an algorithm that I developed, it encypts the text. To decrypt it the same password is needed. There is no way to recover the text if in case one forgets the password. There is no global or master key which can be used to decrypt the text.<br>This project was developed in Visual Studio 2019, using C#.</h3>
+          </div>
+          <div class = "screens">
+            <img src="projects/encrypter_01.png">
+          </div>
+        </div>
+      </div>
+
+      <!-- Project  END: ENCRYPTER -->
+      
+
+      <a class="prev" onclick="plusSlides(-1)">❮</a>
+      <a class="next" onclick="plusSlides(1)">❯</a>
+
+    </div>
+    <div class="dot-container">
+      <span class="dot" onclick="currentSlide(1)"></span>
+    </div>
+  </div>
+
 </section>
 
 
@@ -74,7 +89,7 @@ I can also <c>edit videos</c>, <c>photos</c> and do some basic <c>VFX</c> work.<
 <section id=contact>
 <div class="contact" style="padding-left: 17px">
   <h1>Contact</h1>
-  <h2>I'd love to hear from you! Be it for your next project, consultation, or just a friendly chat!</h2>
+  <h2 style="padding-top: 5vh;">I'd love to hear from you! Be it for your next project, consultation, or just a friendly chat!</h2>
   <h3>Email</h3>
   <div class="email">
   	<contact>hello@udayrajoriya.com</contact>
@@ -97,7 +112,24 @@ I can also <c>edit videos</c>, <c>photos</c> and do some basic <c>VFX</c> work.<
 	Website Designed and Developed by Uday Rajoriya</h4>
 </div>
 
+<div class = "logo">U|R</div>
+
+
+<div class="topnav" id="myTopnav" >
+
+
+
+  <a href="#home">Home</a>
+  <a href="#projects">Projects</a>
+  <a href="#about">About</a>
+  <a href="#contact">Contact</a>
+  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <i class="fas fa-bars"></i>
+  </a>
+</div>
+
 <script>
+//Responsiveness
 function myFunction()
 {
   var x = document.getElementById("myTopnav");
@@ -110,9 +142,40 @@ function myFunction()
   }
 }
 
+// Disable right click
+
 document.addEventListener("contextmenu", function(e){
     e.preventDefault();
 }, false);
+
+// Projects slideshow
+
+var slideIndex = 1;
+    showSlides(slideIndex);
+
+    function plusSlides(n) {
+      showSlides(slideIndex += n);
+    }
+
+    function currentSlide(n) {
+      showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+      var i;
+      var slides = document.getElementsByClassName("mySlides");
+      var dots = document.getElementsByClassName("dot");
+      if (n > slides.length) {slideIndex = 1}    
+      if (n < 1) {slideIndex = slides.length}
+      for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";  
+      }
+      for (i = 0; i < dots.length; i++) {
+          dots[i].className = dots[i].className.replace(" active", "");
+      }
+      slides[slideIndex-1].style.display = "block";  
+      dots[slideIndex-1].className += " active";
+    }
 
 </script>
 

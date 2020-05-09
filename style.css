@@ -75,6 +75,17 @@ contact { /* The box containing email and phone number */
   padding-bottom: 10px;
 }
 
+button {
+  color: white;
+  border-color: red;
+  background-color: red;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  padding-left: 1%;
+  padding-right: 1%;
+  font-size: 25px;
+}
+
 .invalid { /* 404 Section */
   width: 80%;
   padding: 15% 7%;
@@ -197,7 +208,6 @@ contact { /* The box containing email and phone number */
     -webkit-flex: 1; /* Safari */
   -ms-flex: 1; /* IE 10 */
   flex: 1; /* Standard syntax */
-  opacity: 60%;
   color: white;
 
 }
@@ -236,7 +246,6 @@ background-color: red;
   padding-right: 2%;
   padding-top: 1%;
   width: 95%;
-  opacity: 60%;
   color: white;
 
 }

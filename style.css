@@ -98,7 +98,8 @@ button {
 }
 
 .logo { /* UR Logo */
-  width: 60%;
+  width: 100%;
+  background-color: black;
   position: fixed;
   top: 0;
   float: left;
@@ -165,6 +166,9 @@ button {
   .topnav a.icon {
     display: block; /* This enables the three lines/bars icon */
   }
+  section { /* Common styling for all the sections of the website */ 
+  padding: 5% 7%;
+}
 
 }
 

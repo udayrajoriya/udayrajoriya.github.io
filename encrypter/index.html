@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ENCRYPTER by Uday Rajoriya</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+  <script src="urcrypt.js"></script>
+</head>
+<body>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"> 
+  </script>
+  <div class="nav">
+      <a href="#" id="logo">ENCRYPTER</a>
+      <a href="#about">About</a>
+      <a href="#instructions">Instructions</a>        
+  </div>
+  
+  <section id="urcrypt">
+  	<div class="main">
+      <textarea id='input' placeholder="Your input goes here!"></textarea>
+      <br>
+      <h3>Key:</h3>
+      <input type="password" id="key" maxlength="15">
+      <br>
+      <button id="button" class="button enc" onclick="btnEncryptClick()">ENCRYPT</button>
+      <br>
+      <button id="button" class="button dec" onclick="btnDecryptClick()">DECRYPT</button>
+      <br>
+      <textarea id='output' readonly="readonly" placeholder="Your output will appear here!"></textarea>
+      <br>
+      <button id="button" class="button cpy" onclick="btnCopy()">COPY</button>
+  	</div>
+  </section>
+  <section id="instructions">
+    <h1>Instructions</h1>
+    <div class="content">
+      <div class="inst">
+        <h3>Encryption:</h3>
+        <p>
+          1) Whatever text you want to encrypt, enter that into the input box.
+          <br>
+          2) Then in the key box enter a desired key of exact 15 characters that you would like your text to be encoded with.
+          <br>
+          3) Then click the "ENCRYPT" button.
+          <br>
+          4) Your encrypted text will appear in the output section.
+        </p>
+      </div>
+      <div class="inst">
+        <h3>Decryption:</h3>
+        <p>
+          1) Whatever text you want to decrypt, enter that into the input box.
+          <br>
+          2) Then in the key box enter the key of exact 15 characters that was used to encode the text.
+          <br>
+          3) Then click the "DECRYPT" button.
+          <br>
+          4) Your decrypted text will appear in the output section.
+        </p>
+      </div>
+      <div class="inst">
+        <h3>Important Note:</h3>
+        <p>
+          Please keep the key safe. If you lose it, there is no way to recover the original text.
+        </p>
+      </div>
+    </div>
+  </section>
+  
+  <section id="about">
+    <div class="content">
+      <h1>About</h1>
+      <div class="inst">
+        <h3>Information:</h3>
+        <p>
+          The algorithm used in this site is called URCRYPT. It is a custom algorithm created by Uday Rajoriya and it is based on Caesar Cipher also known as Caesar's code or Caesar shift(<a href="https://en.wikipedia.org/wiki/Caesar_cipher" target="_blank">Wikipedia</a>).
+          <br>
+          <br>
+          In here instead of a constant shifting of all the characters, shifting is done based on the key entered. The characters to shift, the shift direction and the amount of shift is all determined via a key of 15-characters.
+        </p>
+      </div>
+      <div class="inst">
+        <h3>Contact:</h3>
+        <p>
+          Algorithm and Site Developed By: Uday Rajoriya
+          <br>
+          Website: <a href="https://udayrajoriya.com" target="_blank">https://udayrajoriya.com</a>
+          <br>
+          Email: <a href="mailto:hello@udayrajoriya.com" target="_blank">hello@udayrajoriya.com</a>
+        </p>
+      </div>
+    </div>
+  </section>
+<div class="footer">
+        <p>Site and URCRYPT Algorithm Developed by Uday Rajoriya</p>
+    </div>
+    <script type="text/javascript">
+        function btnCopy()
+        {
+          /* Get the text field */
+          var copyText = document.getElementById("output");
+
+          /* Select the text field */
+          copyText.select();
+          copyText.setSelectionRange(0, 99999); /* For mobile devices */
+
+          /* Copy the text inside the text field */
+          document.execCommand("copy");
+        }
+    </script>
+</body>
+</html>

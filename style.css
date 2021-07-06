@@ -210,6 +210,11 @@ button {
     display: block; /* Enables the responsive navbar items */
     text-align: left; /* Aligns the navbar item's text to left */
   }
+	
+	.project
+	{
+		width: 100%;
+	}
 
 }
 

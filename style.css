@@ -58,11 +58,11 @@ section { /* Common styling for all the sections of the website */
 }
 
 .home { /* Home section needed to be different then rest of the sections */
-  line-height: 1.2;
+  line-height: 0.7;
   margin: auto;
   width: 100%;
   height: 100%;
-  padding-top: 32%;
+  padding-top: 68%;
 }
 
 contact { /* The box containing email and phone number */
@@ -103,11 +103,23 @@ button {
   position: fixed;
   top: 0;
   float: left;
-  padding: 30px 30px;
+  padding: 20px 30px;
   font-family: alfa;
   color: red;
   text-align: left;
   font-size: 35px;
+
+  -webkit-user-select: none;  /* Chrome all / Safari all */
+  -moz-user-select: none;     /* Firefox all */
+  -ms-user-select: none;      /* IE 10+ */
+  user-select: none;          /* Likely future */   
+
+  transition: color 0.5s;
+}
+
+.logo:hover
+{
+	color: white;
 }
 
 .topnav { /* Navigation bar styling for non-mobile */
@@ -122,14 +134,22 @@ button {
   display: block;
   color: #f2f2f2;
   text-align: center;
-  padding: 34px 50px;
+  padding: 30px 20px;
   text-decoration: none;
   font-size: 25px;
+  transition: padding 0.5s, font-size 0.5s, color 0.5s;
 }
 
 .topnav a.active { /* Active navbar items */
   background-color: #4CAF50; /* Sets background color */
   color: white; /* Sets text color to be white of active navbar items */
+}
+
+.topnav a:hover
+{
+	color: red;
+	padding-top: 26px;
+	font-size: 28px;
 }
 
 .topnav .icon { /* Three bars icon(displayed when on mobile devices) */
@@ -178,8 +198,7 @@ button {
     position: sticky; /* To make the navbar stick to the top always, and not move with the page when scrolled */
     top: 0; /* Sets position of navbar to the very top */
     left: 0; /* Sets navbar's position to the very left */
-    background-color: #000000; /* Sets navbar's background color as black */
-    opacity: 80%; /* Makes the navbar a little transparent */
+    background-color: rgba(0, 0, 0, 0.8); /* Sets navbar's background color as black */
   }
   .topnav.responsive .icon { /* Navbar three bars icon styling */
     position: absolute; /* Sets the three bars icon position */
@@ -236,7 +255,19 @@ img{
     }
 
 .project {
+  display: inline-block;
+  width: 552px;
+  height: 167px;
+  color: black;
+  background-color: white;
+  position: relative;
 }
+
+.other-project {
+  padding: 10px;
+  height: auto;
+}
+
 
 .project-title {
 padding-left: 2%;

@@ -179,6 +179,12 @@ button {
   width: 100%;
 }
 
+.iFrameClass
+{
+	width: 552px;
+	height: 167px;
+}
+
 @media screen and (max-width: 920px) { /* This is for responsive layout. If width is less than 920pixels, the following scope will be activated */
   .topnav a {
     display: none; /* This stops the non mobile navigation bar items from being displayed */
@@ -210,7 +216,10 @@ button {
     display: block; /* Enables the responsive navbar items */
     text-align: left; /* Aligns the navbar item's text to left */
   }
-	
+	.iFrameClass
+	{
+		width: 100%;
+	}
 	.project
 	{
 		width: 100%;
@@ -310,6 +319,8 @@ background-color: red;
   object-fit: contain;
   background-color: #17191a;
 }
+
+
 
 /* Slides */
 .mySlides {

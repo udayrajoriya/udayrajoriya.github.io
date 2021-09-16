@@ -137,7 +137,7 @@ button {
   padding: 30px 20px;
   text-decoration: none;
   font-size: 25px;
-  transition: padding 0.5s, font-size 0.5s, color 0.5s text-decoration 0.5s;
+  transition: padding 0.5s, font-size 0.5s, color 0.5s;
 }
 
 .topnav a.active { /* Active navbar items */
@@ -150,7 +150,6 @@ button {
 	color: red;
 	padding-top: 26px;
 	font-size: 28px;
-	text-decoration: underline;
 }
 
 .topnav .icon { /* Three bars icon(displayed when on mobile devices) */

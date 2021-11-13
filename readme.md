@@ -6,13 +6,22 @@ Your Simple Version Control System(URVCS) is an experimental, lightweight and si
 
 ### For Windows
 
-https://google.com
+https://github.com/udayrajoriya/udayrajoriya.github.io/blob/master/urvcs/URVCS-Setup.exe?raw=true
 
 ## Installation Guide
 
 1) Download the release.
-2) Extract it to any desired location(Eg: C:\URVCS).
-3) Add URVCS to PATH.
+2) Run the self-extracting archive and let it extract to any desired location(Eg: C:\URVCS).
+3) Add the directory where you extracted URVCS to the PATH.
+	1) Right Click on My Computer/This PC
+	2) Select Properties
+	3) Select Advanced System Settings
+	4) Select Environment Variables
+	5) Select "Path" variable from User variables list
+	6) Click Edit
+	7) Then New
+	8) Then enter the path where you extracted URVCS(e.g.: C:\URVCS)
+	9) Click Ok on all open windows
 
 ## Usage Guide
 

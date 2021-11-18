@@ -6,7 +6,9 @@ Your Simple Version Control System(URVCS) is an experimental, lightweight and si
 
 ### For Windows
 
-https://github.com/udayrajoriya/udayrajoriya.github.io/blob/master/urvcs/URVCS-Setup.exe?raw=true
+[v1.0.1](https://raw.githubusercontent.com/udayrajoriya/udayrajoriya.github.io/master/urvcs/URVCS-Setup-v1.0.1.exe)
+
+[v1.0.0](https://github.com/udayrajoriya/udayrajoriya.github.io/blob/master/urvcs/URVCS-Setup.exe?raw=true)
 
 ## Installation Guide
 

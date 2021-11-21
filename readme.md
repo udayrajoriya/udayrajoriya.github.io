@@ -27,6 +27,8 @@ Your Simple Version Control System(URVCS) is an experimental, lightweight and si
 
 ## Usage Guide
 
+Note: URVCS can be used via CMD, Powershell or any similar command interpreter/shell.
+
 ### Initialize
 
 To use URVCS in your project, you will need to initialize the project.
@@ -86,6 +88,38 @@ Restore or fallback to any other build/commit/snapshot.
 #### Example
 
 > urvcs restore 7
+
+### Exclude Directories from Commit
+
+Exclude directories from being included in a commit.
+
+#### Instruction
+
+> Simply create a file named "directories.ignore" and add name of directories in double quotes("dir1" "dir2") in this file using your favourite text-editor.
+
+#### Example contents of directories.ignore
+
+> "binx86" "binx64" "user" "cfg"
+
+#### Note
+
+> Please make sure to enter the directories in the same line and not in different lines. Also make sure to put name of each directory inside double quotes as shown in the above example.
+
+### Exclude Files from Commit
+
+Exclude files from being included in a commit.
+
+#### Instruction
+
+> Simply create a file named "files.ignore" and add name of files in double quotes("file1.ext" "file2.ext") in this file using your favourite text-editor.
+
+#### Example contents of files.ignore
+
+> "log.txt" "system.cfg" "launcher.exe" "user.cfg"
+
+#### Note
+
+> Please make sure to enter the files in the same line and not in different lines. Also make sure to put name of each file inside double quotes as shown in the above example.
 
 ## FAQ
 

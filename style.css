@@ -185,6 +185,20 @@ button {
 	height: 167px;
 }
 
+.project {
+  display: inline-block;
+  width: 552px;
+  height: 167px;
+  color: black;
+  background-color: white;
+  position: relative;
+}
+
+.other-project {
+  padding: 10px;
+  height: auto;
+}
+
 @media screen and (max-width: 920px) { /* This is for responsive layout. If width is less than 920pixels, the following scope will be activated */
   .topnav a {
     display: none; /* This stops the non mobile navigation bar items from being displayed */
@@ -195,6 +209,10 @@ button {
   section { /* Common styling for all the sections of the website */ 
   padding: 7% 7%;
 }
+	.project
+	{
+		width: 208px;
+	}
 
 }
 
@@ -268,19 +286,7 @@ img{
         display: block; /* remove extra space below image */
     }
 
-.project {
-  display: inline-block;
-  width: 552px;
-  height: 167px;
-  color: black;
-  background-color: white;
-  position: relative;
-}
 
-.other-project {
-  padding: 10px;
-  height: auto;
-}
 
 
 .project-title {

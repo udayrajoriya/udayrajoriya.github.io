@@ -26,11 +26,37 @@
         font-size: 60px;
       }
 
-      #id
+      .containerWrapper
       {
-        height: 100vh;
-        width: 100vw;
+        margin: 0;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        font-size: 60px;
       }
+
+      a
+      {
+        color: red;
+        text-decoration: none;
+        transition: all 0.8s;
+      }
+
+      a:hover
+      {
+        text-decoration: underline;
+      }
+
+      a:visited, a:active
+      {
+        text-decoration: none;
+      }
+      
+      
+
+      
     </style>
     <title>Announcement</title>
   </head>
@@ -66,7 +92,7 @@
       if (distance < 0)
       {
         clearInterval(x);
-        document.getElementById("demo").innerHTML = "EXPIRED";
+        document.getElementById("demo").innerHTML = "<div class=\"containerWrapper\"><h1>Click <a href=\"https://www.youtube.com/watch?v=uw94rsO_Y0E\">here</a></h1></div>";
       }
     }, 1000);
   </script>

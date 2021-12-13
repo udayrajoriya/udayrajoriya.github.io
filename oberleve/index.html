@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>The Oberleve Hotel</title>
+</head>
+<body>
+    <div class="topnav" id="myTopnav">
+        <a href="#home" class="active">the oberleve hotel</a>
+        <a href="#faq" class="navItem">FAQ</a>
+        <a href="#media" class="navItem">Media</a>
+        <a href="#about" class="navItem">About</a>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+          <i class="fa fa-bars"></i>
+        </a>
+    </div>
+    <div class="websiteContent">
+        <section id="home">
+            <div class="homeContent">
+                <img src="assets/oberleve.png">
+            </div>
+        </section>
+        <section id="about">
+            <div class="aboutContent">
+                <h1>About</h1>
+                <div class="aboutText">
+                    <p>The Oberleve Hotel is a first-person psychological horror game.</p>
+                </div>
+            </div>
+        </section>
+        <section id="media">
+            <div class="mediaContent">
+                <h1>Media</h1>
+                <div class="mediaBlock">
+                    <h2>Announcement Trailer</h2>
+                    <div class="mediaContainer">
+                        <iframe src="https://www.youtube.com/embed/IfCxcpzLFrs" title="The Oberleve Hotel" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="faq">
+            <div class="faqContent">
+                <h1>FAQ</h1>
+                <details>
+                    <summary>When will The Oberleve Hotel release?</summary>
+                    <p>Q4 2022.</p>
+                </details>
+                <details>
+                    <summary>Will The Oberleve Hotel release on consoles?</summary>
+                    <p>At the moment only PC release is planned. But, any further update(s) on platform(s) will be reflected here.</p>
+                </details>
+                <details>
+                    <summary>How many people are working on the game?</summary>
+                    <p>At the moment only one person is working on the game.</p>
+                </details>
+                <details>
+                    <summary>Will The Oberleve Hotel have VR support?</summary>
+                    <p>At the moment there are no plans for VR support.</p>
+                </details>
+                <details>
+                    <summary>Have more questions?</summary>
+                    <p>Follow me on Instagram and YouTube to get updated on this project.</p>
+                </details>
+            </div>      
+        </section>
+    </div>
+    <div class="footer">
+        <h1><a href="https://udayrajoriya.com" target="_blank" rel="noopener noreferrer">U|R</a></h1>
+        <a href="https://www.instagram.com/udayrajoriya"  target="_blank" rel="noopener noreferrer" class="fa fa-instagram"></a>
+        <a href="https://www.youtube.com/channel/UCS_YM8VG2sCn9M3Ugu67q2Q" target="_blank" rel="noopener noreferrer" class="fa fa-youtube"></a>
+        <p>© Copyright 2021. All rights reserved.</p>
+    </div>
+    <script>
+        function myFunction() {
+          var x = document.getElementById("myTopnav");
+          if (x.className === "topnav") {
+            x.className += " responsive";
+          } else {
+            x.className = "topnav";
+          }
+        }
+    </script>
+</body>
+</html>

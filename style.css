@@ -250,23 +250,32 @@ contact:hover {
   text-align: center;
   width: 100%;
   animation: fadeIn 1s ease-out 0.2s both;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
 }
 
 .projects h1 {
-  margin-bottom: 40px;
+  margin: 30px 0 40px 0;
   position: relative;
   display: inline-block;
+}
+
+.projects h1:first-child {
+  margin-top: 0;
 }
 
 .projects h1::after {
   content: '';
   position: absolute;
-  bottom: -10px;
+  bottom: -15px;
   left: 50%;
   transform: translateX(-50%);
-  width: 80px;
+  width: 100px;
   height: 3px;
-  background: linear-gradient(90deg, transparent, red, transparent);
+  background: linear-gradient(90deg, transparent, rgba(255, 0, 0, 0.8), transparent);
+  box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
 }
 
 .about {
@@ -508,17 +517,19 @@ button:active {
 
 .project {
   display: inline-block;
-  width: 552px;
-  height: 167px;
-  color: black;
-  background: linear-gradient(135deg, #ffffff, #f5f5f5);
+  width: 600px;
+  max-width: 90%;
+  min-height: 200px;
+  color: white;
+  background: linear-gradient(135deg, #1a1a1a 0%, #0d0d0d 100%);
   position: relative;
-  margin: 15px;
-  border-radius: 12px;
+  margin: 20px;
+  border-radius: 16px;
   overflow: hidden;
-  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255, 0, 0, 0.1);
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   animation: slideInRight 0.6s ease-out;
+  border: 1px solid rgba(255, 0, 0, 0.2);
 }
 
 .project::before {
@@ -528,8 +539,9 @@ button:active {
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 0, 0, 0.1), transparent);
-  transition: left 0.6s ease;
+  background: linear-gradient(90deg, transparent, rgba(255, 0, 0, 0.15), transparent);
+  transition: left 0.8s ease;
+  z-index: 1;
 }
 
 .project:hover::before {
@@ -537,31 +549,56 @@ button:active {
 }
 
 .project:hover {
-  transform: translateY(-10px) scale(1.02);
-  box-shadow: 0 15px 40px rgba(255, 0, 0, 0.4), 0 0 30px rgba(255, 0, 0, 0.2);
+  transform: translateY(-8px);
+  box-shadow: 0 16px 48px rgba(255, 0, 0, 0.3), 0 0 40px rgba(255, 0, 0, 0.15), 0 0 0 1px rgba(255, 0, 0, 0.3);
+  border-color: rgba(255, 0, 0, 0.5);
 }
 
 .project iframe {
+  width: 100%;
+  height: 167px;
+  border: none;
   border-radius: 12px;
+  position: relative;
+  z-index: 2;
+  background: #000;
 }
 
 .other-project {
-  padding: 25px;
+  padding: 35px 30px;
   height: auto;
-  background: linear-gradient(135deg, #1a1a1a, #2a2a2a);
-  color: white;
+  min-height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .other-project h3 {
-  color: red;
-  margin-bottom: 15px;
-  font-size: 28px;
+  color: #ff0000;
+  margin: 0 0 20px 0;
+  font-size: 32px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
 }
 
 .other-project p {
-  line-height: 1.6;
-  opacity: 0.9;
-  margin-bottom: 20px;
+  line-height: 1.8;
+  opacity: 0.85;
+  margin-bottom: 25px;
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.other-project form {
+  margin-top: auto;
+}
+
+.other-project button {
+  width: 100%;
+  max-width: 200px;
+  padding: 14px 35px;
+  font-size: 20px;
 }
 
 @media screen and (max-width: 920px) {
@@ -606,8 +643,20 @@ button:active {
   
   .project {
     width: 100%;
-    max-width: 400px;
+    max-width: 100%;
     margin: 15px auto;
+  }
+  
+  .other-project {
+    padding: 25px 20px;
+  }
+  
+  .other-project h3 {
+    font-size: 26px;
+  }
+  
+  .other-project p {
+    font-size: 14px;
   }
   
   .about {

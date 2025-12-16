@@ -9,81 +9,331 @@
 }
 
 ::-webkit-scrollbar {
-  width: 20px; /* Remove scrollbar space */
-  background: transparent; /* Optional: just make scrollbar invisible */
-}
-/* Optional: show position indicator in red */
-::-webkit-scrollbar-thumb {
-  background: red;
+  width: 12px;
 }
 
-html { /* To smoothly scroll to different sections */
+::-webkit-scrollbar-track {
+  background: #0a0a0a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #ff0000, #cc0000);
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #cc0000, #990000);
+}
+
+html {
   scroll-behavior: smooth;
 }
 
-body { /* Styling for entire body */
-  margin: 0; /* No margin for body */
-  font-family: oswald; /* Use oswald font in the body */
-  background-color:#000000; /* Set background color of body to be black */
-  color: white; /* Sets color of text in body to white */
+body {
+  margin: 0;
+  font-family: oswald;
+  background: radial-gradient(ellipse at bottom, #0d0d0d 0%, #000000 100%);
+  background-attachment: fixed;
+  color: white;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Animated stars background */
+.stars, .stars2, .stars3 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.stars {
+  background: transparent url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="2" height="2"><circle cx="1" cy="1" r="1" fill="rgba(255,255,255,0.3)"/></svg>') repeat;
+  animation: animateStars 100s linear infinite;
+}
+
+.stars2 {
+  background: transparent url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="3" height="3"><circle cx="1.5" cy="1.5" r="1" fill="rgba(255,0,0,0.2)"/></svg>') repeat;
+  animation: animateStars 150s linear infinite;
+}
+
+.stars3 {
+  background: transparent url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="4" height="4"><circle cx="2" cy="2" r="1" fill="rgba(255,255,255,0.1)"/></svg>') repeat;
+  animation: animateStars 200s linear infinite;
+}
+
+@keyframes animateStars {
+  from {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY(-2000px);
+  }
 }
 
 h1 {
-  font-size: 68px; /* h1 font size set */
+  font-size: 68px;
+  margin: 0;
+  padding: 0;
+  text-shadow: 0 0 20px rgba(255, 0, 0, 0.3);
+  animation: fadeInUp 1s ease-out;
 }
 
 h2 {
-  font-size: 38px; /* h2 font size set */
-  margin:0;
-    padding:0;
+  font-size: 38px;
+  margin: 0;
+  padding: 0;
+  font-weight: 300;
+  letter-spacing: 1px;
+  animation: fadeInUp 1.2s ease-out;
 }
 
 h3 {
-  font-size: 23px; /* h3 font size set */
-  margin:0;
+  font-size: 23px;
+  margin: 0;
   padding-bottom: 6px;
+  font-weight: 400;
+  letter-spacing: 0.5px;
 }
 
-c{ /* Used this tag for highlighting text */
+c {
   color: red;
+  position: relative;
+  font-weight: bold;
 }
 
-section { /* Common styling for all the sections of the website */
-  
-  padding: 1.5% 7%;
-  display: table;
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes glow {
+  0%, 100% {
+    box-shadow: 0 0 5px rgba(255, 0, 0, 0.5), 0 0 10px rgba(255, 0, 0, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.8), 0 0 30px rgba(255, 0, 0, 0.5);
+  }
+}
+
+section {
+  padding: 0 7%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   margin: 0;
   max-width: none;
+  min-height: 100vh;
   height: 100vh;
+  position: relative;
+  opacity: 0;
+  animation: fadeIn 0.8s ease-out forwards;
 }
 
-.home { /* Home section needed to be different then rest of the sections */
-  line-height: 0.7;
-  margin: auto;
+section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255, 0, 0, 0.5), transparent);
+}
+
+.home {
+  line-height: 1.2;
+  text-align: center;
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.home h1 {
+  font-size: 80px;
+  background: linear-gradient(135deg, #ffffff, #ff0000);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 30px;
+  line-height: 1.1;
+}
+
+.home h2 {
+  font-size: 42px;
+  opacity: 0.9;
+  line-height: 1.3;
+}
+
+contact {
+  font-size: 30px;
+  background: linear-gradient(135deg, #ff0000, #cc0000);
+  display: inline-block;
+  padding: 15px 25px;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(255, 0, 0, 0.4);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+contact::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
   width: 100%;
   height: 100%;
-  padding-top: 68%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s ease;
 }
 
-contact { /* The box containing email and phone number */
-  font-size: 30px;
-  background-color: red;
+contact:hover::before {
+  left: 100%;
+}
+
+contact:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(255, 0, 0, 0.6);
+}
+
+.email {
+  text-align: center;
+  margin: 20px 0;
+  animation: fadeInUp 1s ease-out 0.3s both;
+}
+
+.projects {
+  text-align: center;
+  width: 100%;
+  animation: fadeIn 1s ease-out 0.2s both;
+}
+
+.projects h1 {
+  margin-bottom: 40px;
+  position: relative;
   display: inline-block;
-  padding-top: 10px;
-  padding-left: 15px;
-  padding-right: 15px;
-  padding-bottom: 10px;
+}
+
+.projects h1::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, red, transparent);
+}
+
+.about {
+  max-width: 1200px;
+  text-align: justify;
+  animation: slideInLeft 1s ease-out 0.2s both;
+  line-height: 1.6;
+}
+
+.about h1 {
+  text-align: left;
+  margin-bottom: 30px;
+}
+
+.about h2 {
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 1.8;
+}
+
+.contact {
+  text-align: center;
+  width: 100%;
+  animation: fadeIn 1s ease-out 0.2s both;
 }
 
 button {
   color: white;
-  border-color: red;
-  background-color: red;
-  padding-top: 1%;
-  padding-bottom: 1%;
-  padding-left: 1%;
-  padding-right: 1%;
+  border: 2px solid red;
+  background: linear-gradient(135deg, #ff0000, #cc0000);
+  padding: 12px 30px;
   font-size: 25px;
+  font-family: oswald;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(255, 0, 0, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+button::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+button:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 25px rgba(255, 0, 0, 0.5);
+  border-color: white;
+}
+
+button:active {
+  transform: translateY(-1px);
 }
 
 .invalid { /* 404 Section */
@@ -97,80 +347,151 @@ button {
   margin: auto;
 }
 
-.logo { /* UR Logo */
-  width: 100%;
-  background-color: black;
+.logo {
+  width: auto;
+  background: transparent;
   position: fixed;
   top: 0;
-  float: left;
+  left: 0;
   padding: 20px 30px;
   font-family: alfa;
   color: red;
   text-align: left;
   font-size: 35px;
-
-  -webkit-user-select: none;  /* Chrome all / Safari all */
-  -moz-user-select: none;     /* Firefox all */
-  -ms-user-select: none;      /* IE 10+ */
-  user-select: none;          /* Likely future */   
-
-  transition: color 0.5s;
+  z-index: 1000;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  transition: all 0.5s ease;
+  text-shadow: 0 0 15px rgba(255, 0, 0, 0.8), 0 0 30px rgba(255, 0, 0, 0.4);
 }
 
-.logo:hover
-{
-	color: white;
+.logo:hover {
+  color: white;
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.9), 0 0 40px rgba(255, 0, 0, 0.6);
+  transform: scale(1.05);
 }
 
-.topnav { /* Navigation bar styling for non-mobile */
-  overflow: hidden; /* This is used to not display the part of content that spills or exceeds out from the navbar */
-  position: fixed; /* Set position of navbar */
-  top: 0; /* Sets position of navbar to the very top */
-  right: 0; /* Sets position of navbar to the very right */
+.topnav {
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 1000;
+  background: transparent;
 }
 
-.topnav a { /* Navbar items styling */
+.topnav a {
   float: left;
   display: block;
-  color: #f2f2f2;
+  color: rgba(255, 255, 255, 0.8);
   text-align: center;
-  padding: 30px 20px;
+  padding: 30px 25px;
   text-decoration: none;
-  font-size: 25px;
-  transition: padding 0.5s, font-size 0.5s, color 0.5s;
+  font-size: 22px;
+  transition: all 0.3s ease;
+  position: relative;
+  font-weight: 300;
+  letter-spacing: 1px;
 }
 
-.topnav a.active { /* Active navbar items */
-  background-color: #4CAF50; /* Sets background color */
-  color: white; /* Sets text color to be white of active navbar items */
+.topnav a::before {
+  content: '';
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: red;
+  box-shadow: 0 0 10px rgba(255, 0, 0, 0.8);
+  transform: translateX(-50%);
+  transition: width 0.3s ease;
 }
 
-.topnav a:hover
-{
-	color: red;
-	padding-top: 26px;
-	font-size: 28px;
+.topnav a:hover::before {
+  width: 60%;
+}
+
+.topnav a.active {
+  color: red;
+}
+
+.topnav a.active::before {
+  width: 60%;
+}
+
+.topnav a:hover {
+  color: #ffffff;
+  text-shadow: 0 0 15px rgba(255, 0, 0, 0.6);
 }
 
 .topnav .icon { /* Three bars icon(displayed when on mobile devices) */
   display: none; /* It disables the three bars icon by default if screen size is greater than 920pixels */
 }
 
-.contacticons a{ /* Contact/connect icons properties */
+.contacticons {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.contacticons a {
   color: inherit;
   text-decoration: none;
   padding: 20px 4%;
-  float: left;
-  display: block;
+  display: inline-block;
   text-align: center;
+  transition: all 0.3s ease;
+  position: relative;
 }
 
-.footer { /* Gray footer part styling */
+.contacticons a::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 70px;
+  height: 70px;
+  background: radial-gradient(circle, rgba(255, 0, 0, 0.2), transparent);
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: transform 0.3s ease;
+}
+
+.contacticons a:hover::before {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.contacticons a:hover {
+  color: red;
+  transform: translateY(-5px) scale(1.1);
+  filter: drop-shadow(0 0 10px rgba(255, 0, 0, 0.6));
+}
+
+.footer {
   text-align: center;
-  background-color: #27292b;
-  padding-bottom: 10px;
-  padding-top: 10px;
+  background: linear-gradient(180deg, #1a1a1a, #27292b);
+  padding: 20px 10px;
   bottom: 0;
+  border-top: 1px solid rgba(255, 0, 0, 0.3);
+  position: relative;
+}
+
+.footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255, 0, 0, 0.5), transparent);
+}
+
+.footer h4 {
+  margin: 0;
+  font-weight: 300;
+  letter-spacing: 1px;
+  opacity: 0.8;
 }
 
 .sticky {
@@ -190,29 +511,112 @@ button {
   width: 552px;
   height: 167px;
   color: black;
-  background-color: white;
+  background: linear-gradient(135deg, #ffffff, #f5f5f5);
   position: relative;
+  margin: 15px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.3);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  animation: slideInRight 0.6s ease-out;
+}
+
+.project::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 0, 0, 0.1), transparent);
+  transition: left 0.6s ease;
+}
+
+.project:hover::before {
+  left: 100%;
+}
+
+.project:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 15px 40px rgba(255, 0, 0, 0.4), 0 0 30px rgba(255, 0, 0, 0.2);
+}
+
+.project iframe {
+  border-radius: 12px;
 }
 
 .other-project {
-  padding: 10px;
+  padding: 25px;
   height: auto;
+  background: linear-gradient(135deg, #1a1a1a, #2a2a2a);
+  color: white;
 }
 
-@media screen and (max-width: 920px) { /* This is for responsive layout. If width is less than 920pixels, the following scope will be activated */
+.other-project h3 {
+  color: red;
+  margin-bottom: 15px;
+  font-size: 28px;
+}
+
+.other-project p {
+  line-height: 1.6;
+  opacity: 0.9;
+  margin-bottom: 20px;
+}
+
+@media screen and (max-width: 920px) {
   .topnav a {
-    display: none; /* This stops the non mobile navigation bar items from being displayed */
+    display: none;
   }  
   .topnav a.icon {
-    display: block; /* This enables the three lines/bars icon */
+    display: block;
   }
-  section { /* Common styling for all the sections of the website */ 
-  padding: 7% 7%;
-}
-	.project
-	{
-		width: 208px;
-	}
+  
+  section {
+    padding: 0 5%;
+    min-height: 100vh;
+    height: 100vh;
+  }
+  
+  .home {
+    min-height: 70vh;
+  }
+  
+  .home h1 {
+    font-size: 48px !important;
+    line-height: 1.1 !important;
+  }
+  
+  .home h2 {
+    font-size: 28px !important;
+    line-height: 1.3 !important;
+  }
+  
+  .scroll-indicator {
+    display: none;
+  }
+  
+  h1 {
+    font-size: 42px;
+  }
+  
+  h2 {
+    font-size: 24px;
+  }
+  
+  .project {
+    width: 100%;
+    max-width: 400px;
+    margin: 15px auto;
+  }
+  
+  .about {
+    text-align: left;
+  }
+  
+  .about h2 {
+    font-size: 18px;
+  }
 
 }
 
@@ -382,4 +786,105 @@ background-color: red;
 /* Add a background color to the active dot/circle */
 .active, .dot:hover {
   background-color: #717171;
+}
+
+/* Scroll Indicator */
+.scroll-indicator {
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: fadeIn 2s ease-out 1s both;
+  z-index: 10;
+}
+
+.mouse {
+  width: 26px;
+  height: 40px;
+  border: 2px solid rgba(255, 0, 0, 0.8);
+  border-radius: 13px;
+  position: relative;
+  margin: 0 auto 10px;
+}
+
+.wheel {
+  width: 4px;
+  height: 8px;
+  background: rgba(255, 0, 0, 0.8);
+  border-radius: 2px;
+  position: absolute;
+  top: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: scroll 2s infinite;
+}
+
+@keyframes scroll {
+  0% {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-50%) translateY(15px);
+  }
+}
+
+.arrow {
+  text-align: center;
+}
+
+.arrow span {
+  display: block;
+  width: 12px;
+  height: 12px;
+  border-bottom: 2px solid rgba(255, 0, 0, 0.8);
+  border-right: 2px solid rgba(255, 0, 0, 0.8);
+  transform: rotate(45deg);
+  margin: -6px auto;
+  animation: arrowMove 2s infinite;
+}
+
+.arrow span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+@keyframes arrowMove {
+  0% {
+    opacity: 0;
+    transform: rotate(45deg) translate(-10px, -10px);
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: rotate(45deg) translate(10px, 10px);
+  }
+}
+
+/* Fade in sections on scroll */
+@media (prefers-reduced-motion: no-preference) {
+  section {
+    animation-delay: 0.1s;
+  }
+}
+
+/* Improved iframe styling */
+iframe {
+  transition: all 0.3s ease;
+}
+
+/* Smooth transitions for all interactive elements */
+* {
+  transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+/* Remove transition from specific elements */
+section, .project, h1, h2 {
+  transition: none;
+}
+
+.project {
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }

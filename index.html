@@ -32,15 +32,9 @@
 </section>
 
 
-<section id=games>
+<section id=projects>
   <div class="projects">
-    <h1>Games</h1>
-
-      <div class="project">
-      <iframe frameborder="0" src="https://itch.io/embed/1103362"><a href="https://whattherust.itch.io/spacewarzone">Space Warzone by whattherust</a></iframe>
-	</div>
-
-      <h1>Other Projects</h1>
+    <h1>Projects</h1>
 
       <div class="project other-project">
         <h3>URCRYPT</h3>
@@ -53,6 +47,14 @@ In here instead of a constant shifting of all the characters, shifting is done b
         <button>URCRYPT</button>
       </form>
       </div>
+
+      
+
+      <h1>Games</h1>
+
+      <div class="project">
+        <iframe frameborder="0" src="https://itch.io/embed/1103362"><a href="https://whattherust.itch.io/spacewarzone">Space Warzone by whattherust</a></iframe>
+	    </div>
       
   </div>
 
@@ -101,7 +103,7 @@ In here instead of a constant shifting of all the characters, shifting is done b
 
 
   <a href="#home">Home</a>
-  <a href="#games">Games</a>
+  <a href="#projects">Projects</a>
   <a href="#about">About</a>
   <a href="#contact">Contact</a>
   <a href="javascript:void(0);" class="icon" onclick="myFunction()">
@@ -123,34 +125,27 @@ function myFunction()
   }
 }
 
-// Projects slideshow
-
-var slideIndex = 1;
-    showSlides(slideIndex);
-
-    function plusSlides(n) {
-      showSlides(slideIndex += n);
-    }
-
-    function currentSlide(n) {
-      showSlides(slideIndex = n);
-    }
-
-    function showSlides(n) {
-      var i;
-      var slides = document.getElementsByClassName("mySlides");
-      var dots = document.getElementsByClassName("dot");
-      if (n > slides.length) {slideIndex = 1}    
-      if (n < 1) {slideIndex = slides.length}
-      for (i = 0; i < slides.length; i++) {
-          slides[i].style.display = "none";  
-      }
-      for (i = 0; i < dots.length; i++) {
-          dots[i].className = dots[i].className.replace(" active", "");
-      }
-      slides[slideIndex-1].style.display = "block";  
-      dots[slideIndex-1].className += " active";
-    }
+// Hide scroll indicator when leaving home section
+document.addEventListener('DOMContentLoaded', function() {
+  const scrollIndicator = document.querySelector('.scroll-indicator');
+  const homeSection = document.getElementById('home');
+  
+  if (scrollIndicator && homeSection) {
+    const observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting && entry.intersectionRatio > 0.5) {
+          scrollIndicator.style.display = 'block';
+        } else {
+          scrollIndicator.style.display = 'none';
+        }
+      });
+    }, {
+      threshold: [0, 0.5, 1]
+    });
+    
+    observer.observe(homeSection);
+  }
+});
 
 </script>
 

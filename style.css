@@ -845,6 +845,7 @@ background-color: red;
   transform: translateX(-50%);
   animation: fadeIn 2s ease-out 1s both;
   z-index: 10;
+  transition: opacity 0.4s ease, visibility 0.4s ease;
 }
 
 .mouse {

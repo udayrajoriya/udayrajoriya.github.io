@@ -266,7 +266,9 @@ contact:hover {
   margin-top: 0;
 }
 
-.projects h1::after {
+.projects h1::after,
+.about h1::after,
+.contact h1::after {
   content: '';
   position: absolute;
   bottom: -15px;
@@ -281,13 +283,15 @@ contact:hover {
 .about {
   max-width: 1200px;
   text-align: justify;
-  animation: slideInLeft 1s ease-out 0.2s both;
+  animation: fadeIn 1s ease-out 0.2s both;
   line-height: 1.6;
 }
 
 .about h1 {
-  text-align: left;
-  margin-bottom: 30px;
+  display: block;
+  text-align: center;
+  position: relative;
+  margin-bottom: 40px;
 }
 
 .about h2 {
@@ -300,6 +304,15 @@ contact:hover {
   text-align: center;
   width: 100%;
   animation: fadeIn 1s ease-out 0.2s both;
+}
+
+.contact h1 {
+  position: relative;
+  margin-bottom: 40px;
+}
+
+.contact h2 {
+  padding-top: 20px;
 }
 
 button {

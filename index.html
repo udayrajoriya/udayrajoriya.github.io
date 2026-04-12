@@ -112,6 +112,13 @@ In here instead of a constant shifting of all the characters, shifting is done b
 </div>
 
 <script>
+// Set exact viewport height as a CSS variable to avoid 100vh quirks
+function setVH() {
+  document.documentElement.style.setProperty('--vh', window.innerHeight + 'px');
+}
+setVH();
+window.addEventListener('resize', setVH);
+
 //Responsiveness
 function myFunction()
 {

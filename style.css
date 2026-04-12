@@ -164,11 +164,12 @@ section {
   justify-content: center;
   margin: 0;
   max-width: none;
-  min-height: 100vh;
-  height: 100vh;
+  min-height: var(--vh, 100svh);
+  height: var(--vh, 100svh);
   position: relative;
   opacity: 0;
   animation: fadeIn 0.8s ease-out forwards;
+  overflow: hidden;
 }
 
 section::before {
@@ -624,12 +625,12 @@ button:active {
   
   section {
     padding: 0 5%;
-    min-height: 100vh;
-    height: 100vh;
+    min-height: var(--vh, 100svh);
+    height: var(--vh, 100svh);
   }
   
   .home {
-    min-height: 70vh;
+    min-height: calc(var(--vh, 100svh) * 0.7);
   }
   
   .home h1 {

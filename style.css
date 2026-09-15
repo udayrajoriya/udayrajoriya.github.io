@@ -247,24 +247,99 @@ contact:hover {
   animation: fadeInUp 1s ease-out 0.3s both;
 }
 
+/* Let the work set the section height, including on short landscape screens. */
+#projects {
+  height: auto;
+  padding-block: clamp(104px, 12vh, 144px) clamp(72px, 9vh, 112px);
+  overflow: visible;
+}
+
+#projects,
+#projects * {
+  box-sizing: border-box;
+}
+
 .projects {
-  text-align: center;
   width: 100%;
-  animation: fadeIn 1s ease-out 0.2s both;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 20px;
+  max-width: 1120px;
 }
 
 .projects h1 {
-  margin: 30px 0 40px 0;
+  margin: 0 0 clamp(48px, 6vw, 72px);
   position: relative;
-  display: inline-block;
+  text-align: center;
 }
 
-.projects h1:first-child {
-  margin-top: 0;
+.project {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.4fr);
+  gap: clamp(24px, 4vw, 64px);
+  padding: clamp(28px, 4vw, 44px) 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  text-align: left;
+}
+
+.project:last-child {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.project-heading,
+.project-details {
+  min-width: 0;
+}
+
+.project-kind {
+  margin: 0 0 10px;
+  color: #ff5555;
+  font-size: 14px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.project h2 {
+  font-size: clamp(28px, 3.2vw, 38px);
+  font-weight: 400;
+  line-height: 1.25;
+  letter-spacing: 0;
+  overflow-wrap: anywhere;
+  animation: none;
+}
+
+.project-details p {
+  max-width: 60ch;
+  margin: 0 0 16px;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 1.7;
+}
+
+.project-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 44px;
+  padding: 4px 0;
+  border-bottom: 1px solid #ff5555;
+  color: white;
+  font-size: 18px;
+  text-decoration: none;
+}
+
+.project-link:hover {
+  color: #ff5555;
+}
+
+.project-link:focus-visible {
+  outline: 2px solid #ff5555;
+  outline-offset: 6px;
+}
+
+@media screen and (max-width: 640px) {
+  .project {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 18px;
+  }
 }
 
 .projects h1::after,
@@ -523,98 +598,6 @@ button:active {
   width: 100%;
 }
 
-.iFrameClass
-{
-	width: 552px;
-	height: 167px;
-}
-
-.project {
-  display: inline-block;
-  width: 600px;
-  max-width: 90%;
-  min-height: 200px;
-  color: white;
-  background: linear-gradient(135deg, #1a1a1a 0%, #0d0d0d 100%);
-  position: relative;
-  margin: 20px;
-  border-radius: 16px;
-  overflow: hidden;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255, 0, 0, 0.1);
-  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  animation: slideInRight 0.6s ease-out;
-  border: 1px solid rgba(255, 0, 0, 0.2);
-}
-
-.project::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 0, 0, 0.15), transparent);
-  transition: left 0.8s ease;
-  z-index: 1;
-}
-
-.project:hover::before {
-  left: 100%;
-}
-
-.project:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 16px 48px rgba(255, 0, 0, 0.3), 0 0 40px rgba(255, 0, 0, 0.15), 0 0 0 1px rgba(255, 0, 0, 0.3);
-  border-color: rgba(255, 0, 0, 0.5);
-}
-
-.project iframe {
-  width: 100%;
-  height: 167px;
-  border: none;
-  border-radius: 12px;
-  position: relative;
-  z-index: 2;
-  background: #000;
-}
-
-.other-project {
-  padding: 35px 30px;
-  height: auto;
-  min-height: auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.other-project h3 {
-  color: #ff0000;
-  margin: 0 0 20px 0;
-  font-size: 32px;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  text-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
-}
-
-.other-project p {
-  line-height: 1.8;
-  opacity: 0.85;
-  margin-bottom: 25px;
-  font-size: 16px;
-  color: rgba(255, 255, 255, 0.9);
-}
-
-.other-project form {
-  margin-top: auto;
-}
-
-.other-project button {
-  width: 100%;
-  max-width: 200px;
-  padding: 14px 35px;
-  font-size: 20px;
-}
-
 @media screen and (max-width: 920px) {
   .topnav a {
     display: none;
@@ -655,24 +638,6 @@ button:active {
     font-size: 24px;
   }
   
-  .project {
-    width: 100%;
-    max-width: 100%;
-    margin: 15px auto;
-  }
-  
-  .other-project {
-    padding: 25px 20px;
-  }
-  
-  .other-project h3 {
-    font-size: 26px;
-  }
-  
-  .other-project p {
-    font-size: 14px;
-  }
-  
   .about {
     text-align: left;
   }
@@ -701,24 +666,9 @@ button:active {
     display: block; /* Enables the responsive navbar items */
     text-align: left; /* Aligns the navbar item's text to left */
   }
-	.iFrameClass
-	{
-		width: 100%;
-	}
-	.project
-	{
-		width: 100%;
-	}
-
 }
 
 @media screen and (min-width: 920px) {
-
-.project {
-  display: -webkit-flex; /* Safari */   
-  display: flex; /* Standard syntax */
-
-}
 
 
 .description {
@@ -947,8 +897,4 @@ iframe {
 /* Remove transition from specific elements */
 section, .project, h1, h2 {
   transition: none;
-}
-
-.project {
-  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }

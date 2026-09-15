@@ -32,32 +32,32 @@
 </section>
 
 
-<section id=projects>
+<section id="projects" aria-labelledby="projects-heading">
   <div class="projects">
-    <h1>Projects</h1>
+    <h1 id="projects-heading">Projects</h1>
 
-      <div class="project other-project">
-        <h3>URCRYPT</h3>
-        <p>
-          URCRYPT is a custom algorithm, that is based on Caesar Cipher also known as Caesar's code or Caesar shift.
-
-In here instead of a constant shifting of all the characters, shifting is done based on the key entered. The characters to shift, the shift direction and the amount of shift is all determined via a key of 15-characters.
-        </p>
-        <form action="https://udayrajoriya.com/encrypter">
-        <button>URCRYPT</button>
-      </form>
+    <article class="project" aria-labelledby="urcrypt-title">
+      <div class="project-heading">
+        <p class="project-kind">Tool</p>
+        <h2 id="urcrypt-title">URCRYPT</h2>
       </div>
+      <div class="project-details">
+        <p>A custom take on the Caesar cipher. A 15-character key determines which characters shift, in which direction, and by how much.</p>
+        <a class="project-link" href="/encrypter/">Try URCRYPT <span aria-hidden="true">&#8594;</span></a>
+      </div>
+    </article>
 
-      
-
-      <h1>Games</h1>
-
-      <div class="project">
-        <iframe frameborder="0" src="https://itch.io/embed/1103362"><a href="https://whattherust.itch.io/spacewarzone">Space Warzone by whattherust</a></iframe>
-	    </div>
-      
+    <article class="project" aria-labelledby="space-warzone-title">
+      <div class="project-heading">
+        <p class="project-kind">Game</p>
+        <h2 id="space-warzone-title">Space Warzone</h2>
+      </div>
+      <div class="project-details">
+        <p>A mission to save the galaxy. My first released game, built with Godot after years of experimenting with game engines.</p>
+        <a class="project-link" href="https://whattherust.itch.io/spacewarzone">View on itch.io <span aria-hidden="true">&#8599;</span></a>
+      </div>
+    </article>
   </div>
-
 </section>
 
 
